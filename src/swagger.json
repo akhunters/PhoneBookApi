@@ -1,0 +1,274 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Phonebook Api",
+    "description": "This is a REST API application made with Express. It is a phonebook api.",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "http://13.233.99.61",
+  "basePath": "/api/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "in": "headers",
+      "name": "authorization"
+    }
+  },
+  "paths": {
+    "/addContact": {
+      "put": {
+        "summary": "Adds a Contact",
+        "description": "Adds a contact in system",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Name",
+            "example": "Avinash Kumar",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "body",
+            "description": "Email",
+            "example": "akhunters07@gmail.com",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "phoneNumber",
+            "in": "body",
+            "description": "Phone Number",
+            "example": "9988776655",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/tempDefs/AddContact"
+            }
+          },
+          "422": {
+            "description": "Email already exists!"
+          }
+        }
+      }
+    },
+    "/deleteContact": {
+      "delete": {
+        "summary": "Delete a Contact",
+        "description": "Deletes a contact from system",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "body",
+            "description": "Email",
+            "example": "akhunters07@gmail.com",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/tempDefs/DeleteContact"
+            }
+          },
+          "422": {
+            "schema": {
+              "$ref": "#/tempDefs/DeleteContact"
+            }
+          }
+        }
+      }
+    },
+    "/modifyContact": {
+      "post": {
+        "summary": "Modifies a Contact",
+        "description": "Modifies a contact in system",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Name",
+            "example": "Avinash Kumar",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "body",
+            "description": "Email",
+            "example": "akhunters07@gmail.com",
+            "schema": {
+              "type": "string",
+              "required": "true"
+            }
+          },
+          {
+            "name": "phoneNumber",
+            "in": "body",
+            "description": "Phone Number",
+            "example": "9988776655",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/tempDefs/AddContact"
+            }
+          },
+          "422": {
+            "schema": {
+              "$ref": "#/tempDefs/DeleteContact"
+            }
+          }
+        }
+      }
+    },
+    "/getContacts": {
+      "get": {
+        "summary": "Get list of Contacts",
+        "description": "Gets list of Contacts, 10 Contacts per page",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "url",
+            "description": "Page No.",
+            "example": "1",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/tempDefs/Contacts"
+            }
+          },
+          "422": {
+            "schema": {
+              "$ref": "#/tempDefs/DeleteContact"
+            }
+          }
+        }
+      }
+    },
+    "/searchContacts": {
+      "get": {
+        "summary": "Search Contacts",
+        "description": "Search contacts by name or email",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Name",
+            "example": "Avinash Kumar",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "body",
+            "description": "Email",
+            "example": "akhunters07@gmail.com",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/tempDefs/Contacts"
+            }
+          },
+          "422": {
+            "schema": {
+              "$ref": "#/tempDefs/DeleteContact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tempDefs": {
+    "AddContact": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact"
+        }
+      }
+    },
+    "DeleteContact": {
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Contacts": {
+      "properties": {
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "page": {
+          "type": "number"
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "Contact": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "required": "true"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "required": "true",
+          "unique": "true"
+        },
+        "createdOn": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
