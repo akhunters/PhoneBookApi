@@ -29,12 +29,12 @@
 ## 1) Adding a contact - 
 ```http
 PUT /api/addContact
-GET /api/getContacts
 ```
 #### Parameters -
 ```json
-    {
-        name : string,
-
-    }
+{
+    "name" : "string",
+    "phoneNumber" : "string",
+    "email" : "string"
+}
 ```
