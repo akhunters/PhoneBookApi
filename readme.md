@@ -13,10 +13,13 @@
 #### Contact -> 
 ```json
     {
-        name : string,
-        phoneNumber : string,
-        email : string,
-        createdOn : string
+        "name" : "type: string"
+                "required : true",
+        "phoneNumber" : "type : string",
+        "email" : "type: string"
+                "required: true"
+                "unique: true",
+        "createdOn" : "string"
     }
 
 ```
@@ -25,12 +28,13 @@
 
 ## 1) Adding a contact - 
 ```http
-    PUT /api/addContact
+PUT /api/addContact
+GET /api/getContacts
 ```
 #### Parameters -
- ```json
+```json
     {
         name : string,
 
     }
-    ```
+```
