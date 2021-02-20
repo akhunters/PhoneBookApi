@@ -11,7 +11,7 @@
 
 ## Models - 
 #### Contact -> 
-    ```json
+```json
     {
         name :  type: string,
                 required : true,
@@ -22,16 +22,16 @@
         createdOn : string
     }
 
-    ```
+```
 
 # Supporting Functionalities - 
 
 ## 1) Adding a contact - 
-    ```http
+```http
     PUT /api/addContact
-    ```
+```
 #### Parameters -
-    ```json
+ ```json
     {
         name : string,
 
