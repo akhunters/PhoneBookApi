@@ -269,23 +269,16 @@ GET http://13.233.99.61/api/searchContact
 ```
 ##### Example - 
 1) Searching with Name - 
-```json
-{   
-    "name" : "Avi"
-}
+```http
+GET http://13.233.99.61/api/searchContact?name=Avinash
 ```
 2) Searching with Email - 
-```json
-{
-    "email" : "avinash@github.com"
-}
+```http
+GET http://13.233.99.61/api/searchContact?email=avinash@gmail.com
 ```
 3) Searching with both Name and Email - 
-```json
-{
-    "name" : "Avi",
-    "email" : "avinash@github.com"
-}
+```http
+GET http://13.233.99.61/api/searchContact?name=Avinash&email=avinash@gmail.com
 ```
 
 #### Responses - 
