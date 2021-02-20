@@ -13,12 +13,9 @@
 #### Contact -> 
 ```json
     {
-        name :  type: string,
-                required : true,
-        phoneNumber : type : string,
-        email : type: string,
-                required: true,
-                unique: true,
+        name : string,
+        phoneNumber : string,
+        email : string,
         createdOn : string
     }
 
