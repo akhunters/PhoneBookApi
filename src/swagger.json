@@ -177,7 +177,7 @@
         }
       }
     },
-    "/searchContacts": {
+    "/searchContact": {
       "get": {
         "summary": "Search Contacts",
         "description": "Search contacts by name or email",
