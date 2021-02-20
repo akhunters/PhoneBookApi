@@ -28,7 +28,7 @@
 
 ## 1) Adding a contact - 
 ```http
-PUT /api/addContact
+PUT http://13.233.99.61/api/addContact
 ```
 #### Parameters -
 ```json
@@ -72,7 +72,7 @@ PUT /api/addContact
 
 ## 2) Deleting a contact - 
 ```http
-DELETE /api/deleteContact
+DELETE http://13.233.99.61/api/deleteContact
 ```
 #### Parameters -
 ```json
@@ -105,7 +105,7 @@ DELETE /api/deleteContact
 
 ## 3) Modifying a contact - 
 ```http
-POST /api/modifyContact
+POST http://13.233.99.61/api/modifyContact
 ```
 #### Parameters (put modified values using the same email address)-
 ```json
@@ -150,7 +150,7 @@ POST /api/modifyContact
 
 ## 4) Getting list of contacts (10 contacts per page) - 
 ```http
-GET /api/getContacts
+GET http://13.233.99.61/api/getContacts
 ```
 #### Parameters (put modified values using the same email address)-
 ```json
@@ -258,7 +258,7 @@ GET /api/getContacts
 
 ## 5) Searching Contacts - 
 ```http
-GET /api/searchContact
+GET http://13.233.99.61/api/searchContact
 ```
 #### Parameters -
 ```json
