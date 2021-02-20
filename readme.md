@@ -150,14 +150,9 @@ POST http://13.233.99.61/api/modifyContact
 
 ## 4) Getting list of contacts (10 contacts per page) - 
 ```http
-GET http://13.233.99.61/api/getContacts
+GET http://13.233.99.61/api/getContacts?page=1
 ```
-#### Parameters -
-```json
-{
-    "page" : 1
-}
-```
+
 
 #### Responses - 
 ##### 200 (Example)
@@ -275,10 +270,6 @@ GET http://13.233.99.61/api/searchContact?name=Avinash
 2) Searching with Email - 
 ```http
 GET http://13.233.99.61/api/searchContact?email=avinash@gmail.com
-```
-3) Searching with both Name and Email - 
-```http
-GET http://13.233.99.61/api/searchContact?name=Avinash&email=avinash@gmail.com
 ```
 
 #### Responses - 
