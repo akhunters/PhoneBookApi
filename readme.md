@@ -1,6 +1,6 @@
 # Add Authorization Header with the following value
 
- apiKey <YOUR API KEY>
+ apiKey < YOUR API KEY >
 
 # For example -
     apiKey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
