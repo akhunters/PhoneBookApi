@@ -152,7 +152,7 @@ POST http://13.233.99.61/api/modifyContact
 ```http
 GET http://13.233.99.61/api/getContacts
 ```
-#### Parameters (put modified values using the same email address)-
+#### Parameters -
 ```json
 {
     "page" : 1
