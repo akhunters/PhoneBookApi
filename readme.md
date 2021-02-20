@@ -265,11 +265,11 @@ GET http://13.233.99.61/api/searchContact
 ##### Example - 
 1) Searching with Name - 
 ```http
-GET http://13.233.99.61/api/searchContact?name=Avinash
+GET http://13.233.99.61/api/searchContact?name=Avinash&page=1
 ```
 2) Searching with Email - 
 ```http
-GET http://13.233.99.61/api/searchContact?email=avinash@gmail.com
+GET http://13.233.99.61/api/searchContact?email=avinash@gmail.com&page=1
 ```
 
 #### Responses - 
