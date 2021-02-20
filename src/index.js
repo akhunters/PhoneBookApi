@@ -26,7 +26,7 @@ app.use(requireAuth, contactRoutes);
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 const mongoUri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.lczfq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-//ssh -i "shubukey.pem" ubuntu@ec2-13-233-99-61.ap-south-1.compute.amazonaws.com
+
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
@@ -43,9 +43,7 @@ mongoose.connection.on("error", (err) => {
   console.log(" error connecting to mongo instance " + err);
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-});
+
 
 app.listen(process.env.PORT || 8080, () => {
   console.log("Listening on port 8080");
